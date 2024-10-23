@@ -3,17 +3,17 @@ interface Pokeprops {
 	imgSrc?: string;
 }
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ name, imgSrc }: Pokeprops) {
 	return (
 		<>
-			{pokemon.imgSrc !== undefined ? (
+			{imgSrc !== undefined ? (
 				<figure>
-					<img src={pokemon.imgSrc} alt="Pokemon Bulbasaur" />
+					<img src={imgSrc} alt="Pokemon Bulbasaur" />
 				</figure>
 			) : (
 				<p>???</p>
 			)}
-			<p>{pokemon.name}</p>
+			<p>{name}</p>
 		</>
 	);
 }

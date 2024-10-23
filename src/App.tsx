@@ -2,11 +2,6 @@ import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 import { useState } from "react";
 
-interface Pokeprops {
-	name: string;
-	imgSrc?: string;
-}
-
 const pokemonList = [
 	{
 		name: "bulbasaur",
@@ -34,22 +29,28 @@ const pokemonList = [
 ];
 
 function App() {
-	const [pokemonList, setPokemonIndex] = useState(0);
+	const [pokemonIndex, setPokemonIndex] = useState(0);
 	const handleClickNext = () => {
-		setPokemonIndex(pokemonList + 1);
+		setPokemonIndex(pokemonIndex + 1);
 	};
 	const handleClickPrevious = () => {
-		setPokemonIndex(pokemonList - 1);
+		setPokemonIndex(pokemonIndex - 1);
 	};
 
 	return (
 		<>
-			/
 			<div>
-				<PokemonCard />
+				<PokemonCard
+					name={pokemonList[pokemonIndex].name}
+					imgSrc={pokemonList[pokemonIndex].imgSrc}
+				/>
 			</div>
-			<button type="button" onClick={handleClickNext} />
-			<button type="button" onClick={handleClickPrevious} />
+			<button type="button" onClick={handleClickNext}>
+				Next
+			</button>
+			<button type="button" onClick={handleClickPrevious}>
+				Previous
+			</button>
 		</>
 	);
 }

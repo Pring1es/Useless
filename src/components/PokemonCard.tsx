@@ -1,9 +1,9 @@
-interface Pokeprops {
+interface pokemon {
 	name: string;
 	imgSrc?: string;
 }
 
-function PokemonCard({ name, imgSrc }: Pokeprops) {
+function PokemonCard({ name, imgSrc }: pokemon) {
 	return (
 		<>
 			{imgSrc !== undefined ? (

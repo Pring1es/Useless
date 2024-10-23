@@ -9,8 +9,7 @@ const pokemonList = [
 	},
 ];
 
-function PokemonCard() {
-	const pokemon = pokemonList[1];
+function PokemonCard({ pokemon }) {
 	return (
 		<>
 			{pokemon.imgSrc !== undefined ? (
@@ -20,7 +19,6 @@ function PokemonCard() {
 			) : (
 				<p>???</p>
 			)}
-
 			<p>{pokemon.name}</p>
 		</>
 	);

@@ -29,7 +29,7 @@ const pokemonList = [
 ];
 
 function App() {
-	const [pokemonIndex, setPokemonIndex] = useState(0);
+	const [pokemonIndex, setPokemonIndex] = useState(1);
 	const handleClickNext = () => {
 		setPokemonIndex(pokemonIndex + 1);
 	};
@@ -45,7 +45,7 @@ function App() {
 					imgSrc={pokemonList[pokemonIndex].imgSrc}
 				/>
 			</div>
-			{pokemonIndex < pokemonList.length - 1 ? (
+			{pokemonIndex > 0 ? (
 				<>
 					<button type="button" onClick={handleClickPrevious}>
 						Previous
@@ -54,7 +54,7 @@ function App() {
 			) : (
 				""
 			)}
-			{pokemonIndex > 0 ? (
+			{pokemonIndex < pokemonList.length - 1 ? (
 				<button type="button" onClick={handleClickNext}>
 					Suivant
 				</button>

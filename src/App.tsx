@@ -45,12 +45,22 @@ function App() {
 					imgSrc={pokemonList[pokemonIndex].imgSrc}
 				/>
 			</div>
-			<button type="button" onClick={handleClickNext}>
-				Next
-			</button>
-			<button type="button" onClick={handleClickPrevious}>
-				Previous
-			</button>
+			{pokemonIndex < pokemonList.length - 1 ? (
+				<>
+					<button type="button" onClick={handleClickPrevious}>
+						Previous
+					</button>
+				</>
+			) : (
+				""
+			)}
+			{pokemonIndex > 0 ? (
+				<button type="button" onClick={handleClickNext}>
+					Suivant
+				</button>
+			) : (
+				""
+			)}
 		</>
 	);
 }

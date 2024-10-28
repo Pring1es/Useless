@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface pokemon {
 	name: string;
 	imgSrc?: string;

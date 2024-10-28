@@ -14,30 +14,17 @@ const NavBar: React.FC<NavBarProps> = ({
 	setPokemonIndex,
 	pokemonList,
 }) => {
-	const handleClickPrevious = () => {
-		setPokemonIndex(pokemonIndex - 1);
+	const handleClick = (index: number) => {
+		setPokemonIndex(index);
 	};
-	const handleClickNext = () => {
-		if (pokemonIndex < pokemonList.length - 1) {
-			setPokemonIndex(pokemonIndex + 1);
-		}
-	};
+
 	return (
 		<nav>
-			{pokemonIndex > 0 ? (
-				<button type="button" onClick={handleClickPrevious}>
-					Previous
+			{pokemonList.map((pokemon, index) => (
+				<button key={pokemon.name} onClick={() => handleClick(index)}>
+					{pokemon.name}
 				</button>
-			) : (
-				""
-			)}
-			{pokemonIndex < pokemonList.length - 1 ? (
-				<button type="button" onClick={handleClickNext}>
-					Suivant
-				</button>
-			) : (
-				""
-			)}
+			))}
 		</nav>
 	);
 };

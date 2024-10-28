@@ -16,6 +16,10 @@ const NavBar: React.FC<NavBarProps> = ({
 }) => {
 	const handleClick = (index: number) => {
 		setPokemonIndex(index);
+		const selectedPokemon = pokemonList[index];
+		if (selectedPokemon.name === "pikachu") {
+			alert("pika pikachu !!!");
+		}
 	};
 
 	return (
